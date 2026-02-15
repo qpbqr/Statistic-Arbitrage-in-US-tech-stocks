@@ -23,7 +23,7 @@ Maintain a cumulative state per stock:
 - `x_t = x_{t-1} + eps_t`
 
 Fit an AR(1) on the last `OU_WINDOW=63` days of `x` to approximate OU behavior:
-- keep names whose **half-life** is in `[3, 60]` days
+- keep names whose **half-life** is in `[1, 60]` days
 
 Signal:
 - `s = (x - mu) / sigma_eq`  (standardized deviation from OU mean)
@@ -33,8 +33,8 @@ Signal:
 - **Enter**
   - `s > entry_thres` → short
   - `s < -entry_thres` → long
-- **Exit** (symmetric): close when `|s|` falls back near the mean (`EXIT_THRES=0.8`)
-- **Stop loss**: close if `|s| > 4.0`
+- **Exit** (symmetric): close when `|s|` falls back near the mean (`EXIT_THRES=0.75`)
+- **Stop loss**: close if `|s| > 3.3`
 
 ### 4) Execution modes (two implementations)
 - **Continuous rebalancing**: equal-weight among active signals daily (costs set to 0 in this experiment)
