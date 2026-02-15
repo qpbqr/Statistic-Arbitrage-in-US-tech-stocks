@@ -42,7 +42,7 @@ Signal:
   - includes a **net exposure cap**
   - optional transaction cost (3 bps) on traded notional
 
-## What’s Auxiliary (Not the main point)
+## What’s Auxiliary
 A **Kalman-filter beta** version is included only as a side experiment to estimate factor betas dynamically.  
 In the shown run, it underperformed the simple rolling-window OLS betas.
 
